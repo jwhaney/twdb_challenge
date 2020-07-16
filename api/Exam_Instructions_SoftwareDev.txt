@@ -1,0 +1,11 @@
+You have been provided a .csv file with a number of email addresses. The practical exam part of this interview asks you to build a simple front-end application/webpage that reads the email addresses and outputs the unique addresses to the webpage and a count of addresses per domain. Follow these instructions:
+
+1) Create a button however you see fit that will trigger the email processing logic.
+2) The button function/processing logic will return unique email addresses from the provided email .csv to an html element on the page.
+3) The button logic will also calculate the user counts per domain and display this information in another html element or the same element as step #2.
+
+Please comment throughout your code to explain your logic and also include a README file that briefly describes the architecture of your application/webpage and any special instructions needed to run or use the application. You are free to use any frameworks, tools or resources that you'd like, but please make a note of them in the README.
+
+Don't worry too much about style and layout, we will only be focusing on functionality and the way you chose to solve the problem. If you have any questions about these instructions, please let us know.
+
+NOTE: There is a lot of developer freedom here and whatever your interpretation of these instructions are is what you should do. There is not one correct answer or way to do this.
