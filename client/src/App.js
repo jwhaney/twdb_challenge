@@ -1,24 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {fetchEmails} from './emails/fetchEmails';
 
 function App() {
+
+  const [loading, setLoading] = useState(true)
+  const [emails, setEmails] = useState() 
+
+  useEffect(() => {
+    setEmails( fetchEmails() )
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        loading ? (<p>...loading</p>) : (emails) 
+      }
     </div>
   );
 }
