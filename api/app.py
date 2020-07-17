@@ -1,22 +1,22 @@
-from flask import Flask, request, jsonify
-import numpy as np
-import pandas as pd
-import csv, json
-import os 
-from os import path
+from flask import Flask, request, jsonify, json
+from flask_cors import CORS
 from emails_as_json import emails_as_json
+from domains_as_json import domains_as_json
 
 app = Flask(__name__)
+CORS(app)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def return_all():
-    return emails_as_json()
+    data = jsonify(emails_as_json())
+    
+    return data
 
-@app.route('/domains')
+@app.route('/domains', methods=['GET'])
 def return_unique_domains():
     #find all unique domains
-    
-    return {}
+    data = jsonify(domains_as_json())
+    return data
 
 if __name__ == "__main__":
         app.run(debug=True)
